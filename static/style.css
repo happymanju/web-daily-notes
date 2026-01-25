@@ -1,0 +1,15 @@
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+
+main {
+  max-width: min(70ch, 100% - 4rem);
+  margin-inline: auto;
+}

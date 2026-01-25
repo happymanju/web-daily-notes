@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Notes</title>
+    <script src="app.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar" id="nav">
+        <button type="button" class="navbutton" id="view-notes">View</button>
+        <button type="button" class="navbutton" id="new-note">New</button>
+        <button type="button" class="navbutton" id="sync-button">Sync</button>
+        <button type="button" class="navbutton" id="clear-storage">Clear</button>
+    </div>
+    <div id="root">
+        <div id="write-note-view">
+            <h1>Write Note</h1>
+            <button id="save-note-btn">Save</button>
+            <input type="text" name="note-title-input" id="note-title-input">
+            <textarea name="note-body-input" id="note-body-input" autocomplete="off"></textarea>
+        </div>
+        <div id="view-all-notes">
+        </div>
+    </div>
+    
+</body>
+</html>
