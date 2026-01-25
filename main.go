@@ -18,7 +18,7 @@ type Notes []Note
 func main() {
 	port := ":8080"
 	mux := http.NewServeMux()
-	staticFiles := http.Dir("../static")
+	staticFiles := http.Dir("static")
 	mux.Handle("/", http.FileServer(staticFiles))
 	mux.HandleFunc("/api", func(w http.ResponseWriter, req *http.Request) {
 		defer req.Body.Close()
