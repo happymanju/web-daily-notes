@@ -1,3 +1,3 @@
-module github.com/happymanju/web-daily-notes
+module github.com/happymanju/wdn
 
 go 1.25.1

@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="navbar" id="nav">
-        <button type="button" class="navbutton" id="view-notes">View</button>
-        <button type="button" class="navbutton" id="new-note">New</button>
-        <button type="button" class="navbutton" id="sync-button">Sync</button>
-        <button type="button" class="navbutton" id="clear-storage">Clear</button>
-    </div>
-    <div id="root">
-        <div id="write-note-view">
-            <h1>Write Note</h1>
-            <button id="save-note-btn">Save</button>
-            <input type="text" name="note-title-input" id="note-title-input">
-            <textarea name="note-body-input" id="note-body-input" autocomplete="off"></textarea>
+    <main>
+        <div class="navbar" id="nav">
+            <button type="button" class="navbutton" id="view-notes">View</button>
+            <button type="button" class="navbutton" id="new-note">New</button>
+            <button type="button" class="navbutton" id="sync-button">Sync</button>
+            <button type="button" class="navbutton" id="clear-storage">Clear</button>
         </div>
-        <div id="view-all-notes">
+        <div id="root">
+            <div class="write-note-view" id="write-note-view">
+                <h1>Write Note</h1>
+                <button id="save-note-btn">Save</button>
+                <input type="text" name="note-title-input" id="note-title-input">
+                <textarea name="note-body-input" id="note-body-input" autocomplete="off" rows="20" cols="30"></textarea>
+            </div>
+            <div class="view-all-notes" id="view-all-notes">
+            </div>
         </div>
-    </div>
-    
+    </main>
 </body>
 </html>

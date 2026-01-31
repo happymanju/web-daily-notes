@@ -1,8 +1,10 @@
 package main
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
+	"io/fs"
 	"log"
 	"net/http"
 	"os"
@@ -15,11 +17,19 @@ type Note struct {
 
 type Notes []Note
 
+//go:embed static/*
+var staticFiles embed.FS
+
 func main() {
 	port := ":8080"
 	mux := http.NewServeMux()
-	staticFiles := http.Dir("static")
-	mux.Handle("/", http.FileServer(staticFiles))
+
+	staticFiles, err := fs.Sub(staticFiles, "static")
+	if err != nil {
+		log.Printf("error reading static files: %v\n", err)
+		os.Exit(1)
+	}
+	mux.Handle("/", http.FileServerFS(staticFiles))
 	mux.HandleFunc("/api", func(w http.ResponseWriter, req *http.Request) {
 		defer req.Body.Close()
 		var data Notes
